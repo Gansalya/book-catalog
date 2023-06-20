@@ -23,13 +23,14 @@ $book = $result->fetch_assoc();
     <title>Каталог книг</title>
 </head>
 <body>
-    <h1><?= $book['title'] ?></h1>
-    <p><strong>Автор:</strong> <?= $book['author_name'] ?></p>
-    <p><strong>Описание:</strong> <?= $book['description'] ?></p>
-    <p><strong>Цена:</strong> <?= $book['price'] ?></p>
+<h1><?= htmlspecialchars($book['title']) ?></h1>
+<p><strong>Автор:</strong> <?= htmlspecialchars($book['author_name']) ?></p>
+<p><strong>Описание:</strong> <?= htmlspecialchars($book['description']) ?></p>
+<p><strong>Цена:</strong> <?= htmlspecialchars($book['price']) ?></p>
 </body>
 </html>
 
 <?php
+$result->close();
 $conn->close();
 ?>
